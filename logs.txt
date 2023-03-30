@@ -1,0 +1,253 @@
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git log
+commit b7c46f9d0f05f27debbac1f82c3718b00e5e34cf (HEAD -> master, origin/master)
+Merge: 5511704 89a2db3
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:12:30 2023 +0200
+
+    Merge branch 'bug2'
+
+commit 89a2db318151ce76fd85e89cd6c1f2c36004a343 (origin/bug2, bug2)
+Author: kivanovska <kike.ivanovska@gmail.com>
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git checkout bug3
+Switched to branch 'bug3'
+M       src/SILab1.java
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git fetch origin master
+From https://github.com/kivanovska/SI_2023_lab1_213067
+ * branch            master     -> FETCH_HEAD
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git checkout master
+Switched to branch 'master'
+M       src/SILab1.java
+Your branch is up to date with 'origin/master'.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git pull origin master
+From https://github.com/kivanovska/SI_2023_lab1_213067
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git checkout bug3
+Switched to branch 'bug3'
+M       src/SILab1.java
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git rebase master
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git log
+commit bb6c4d8be4aaf3a8232a073e72b983665bb15e2b (HEAD -> bug3, origin/bug3)
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:04:11 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit 44a78af687b1e0b2327de63dd3a6348cd06d79c6
+Author: kivanovska <kike.ivanovska@gmail.com>
+commit bb6c4d8be4aaf3a8232a073e72b983665bb15e2b (HEAD -> bug3, origin/bug3)
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:04:11 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit 44a78af687b1e0b2327de63dd3a6348cd06d79c6
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 13:33:19 2023 +0200
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git status
+On branch bug3
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/SILab1.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/
+        SI_2023_lab1_213067.iml
+        src/Main.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git rebase master
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git add .
+warning: in the working copy of 'src/Main.java', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git status
+On branch bug3
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .idea/.gitignore
+        new file:   .idea/misc.xml
+        new file:   .idea/modules.xml
+        new file:   .idea/vcs.xml
+        new file:   SI_2023_lab1_213067.iml
+        new file:   src/Main.java
+        modified:   src/SILab1.java
+
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git rebase master
+error: cannot rebase: Your index contains uncommitted changes.
+error: Please commit or stash them.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git commit -m "resolving conflicts"
+[bug3 2913620] resolving conflicts
+ 7 files changed, 84 insertions(+), 1 deletion(-)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 SI_2023_lab1_213067.iml
+ create mode 100644 src/Main.java
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git rebase master
+Successfully rebased and updated refs/heads/bug3.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git push origin bug3
+To https://github.com/kivanovska/SI_2023_lab1_213067.git
+ ! [rejected]        bug3 -> bug3 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/kivanovska/SI_2023_lab1_213067.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git fetch origin
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git checkout bug3
+Already on 'bug3'
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git merge origin/bug3
+Auto-merging SILab1.java
+Merge made by the 'ort' strategy.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git add .
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git commit -m "merge"
+On branch bug3
+nothing to commit, working tree clean
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git push origin bug3
+Enumerating objects: 23, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 2.42 KiB | 1.21 MiB/s, done.
+Total 15 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/kivanovska/SI_2023_lab1_213067.git
+   bb6c4d8..f811a06  bug3 -> bug3
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git merge bug3
+Updating b7c46f9..f811a06
+Fast-forward
+ .idea/.gitignore        |  8 ++++++++
+ .idea/misc.xml          |  6 ++++++
+ .idea/modules.xml       |  8 ++++++++
+ .idea/vcs.xml           |  6 ++++++
+ SILab1.java             |  4 ++--
+ SI_2023_lab1_213067.iml | 11 +++++++++++
+ src/Main.java           |  5 +++++
+ src/SILab1.java         | 41 ++++++++++++++++++++++++++++++++++++++++-
+ 8 files changed, 86 insertions(+), 3 deletions(-)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 SI_2023_lab1_213067.iml
+ create mode 100644 src/Main.java
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kivanovska/SI_2023_lab1_213067.git
+   b7c46f9..f811a06  master -> master
+PS C:\Users\Com\Desktop\SI_2023_lab1_213067> git log
+commit f811a065bc5fa06f98e550731f5cdd806b5c8550 (HEAD -> master, origin/master, origin/bug3, bug3)
+Merge: 075e571 bb6c4d8
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:43:59 2023 +0200
+
+    Merge remote-tracking branch 'origin/bug3' into bug3
+
+commit 075e571b483b859c82c2135b09b3bdee2afb913c
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:31:40 2023 +0200
+
+    resolving conflicts
+
+commit eec6f11e4aeacfaf1582f9b88ce8d671e2170201
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:04:11 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit b7c46f9d0f05f27debbac1f82c3718b00e5e34cf
+Merge: 5511704 89a2db3
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:12:30 2023 +0200
+
+    Merge branch 'bug2'
+
+commit bb6c4d8be4aaf3a8232a073e72b983665bb15e2b
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:04:11 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit 89a2db318151ce76fd85e89cd6c1f2c36004a343 (origin/bug2, bug2)
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 13:57:38 2023 +0200
+
+    Fix wrong condition in filterOddNumbers
+
+commit 55117043aa66657b88bb857a9a5efe98a08e49e0 (origin/bug1, bug1)
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 13:43:16 2023 +0200
+
+    Fix wrong loop for reading
+
+commit 44a78af687b1e0b2327de63dd3a6348cd06d79c6
+Author: kivanovska <kike.ivanovska@gmail.com>
+commit f811a065bc5fa06f98e550731f5cdd806b5c8550 (HEAD -> master, origin/master, origin/bug3, bug3)
+Merge: 075e571 bb6c4d8
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:43:59 2023 +0200
+
+commit f811a065bc5fa06f98e550731f5cdd806b5c8550 (HEAD -> master, origin/master, origin/bug3, bug3)
+Merge: 075e571 bb6c4d8
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:43:59 2023 +0200
+
+    Merge remote-tracking branch 'origin/bug3' into bug3
+
+commit 075e571b483b859c82c2135b09b3bdee2afb913c
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:31:40 2023 +0200
+
+    resolving conflicts
+
+commit eec6f11e4aeacfaf1582f9b88ce8d671e2170201
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:04:11 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit b7c46f9d0f05f27debbac1f82c3718b00e5e34cf
+Merge: 5511704 89a2db3
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:12:30 2023 +0200
+
+    Merge branch 'bug2'
+
+commit bb6c4d8be4aaf3a8232a073e72b983665bb15e2b
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 14:04:11 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit 89a2db318151ce76fd85e89cd6c1f2c36004a343 (origin/bug2, bug2)
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 13:57:38 2023 +0200
+
+    Fix wrong condition in filterOddNumbers
+
+commit 55117043aa66657b88bb857a9a5efe98a08e49e0 (origin/bug1, bug1)
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 13:43:16 2023 +0200
+
+    Fix wrong loop for reading
+
+commit 44a78af687b1e0b2327de63dd3a6348cd06d79c6
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 13:33:19 2023 +0200
+
+    Add java class
+
+commit 5a2186e023e7504088a840b8da7dbe146fceac94
+Author: kivanovska <kike.ivanovska@gmail.com>
+Date:   Thu Mar 30 13:26:34 2023 +0200
+
+    Initial commit

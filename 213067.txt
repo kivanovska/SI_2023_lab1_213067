@@ -1,0 +1,56 @@
+Чекори на извршување на задачата
+
+4. Иницијализацијата на направив со командата git init, користејќи терминал на IntelliJ
+
+5. Со помош на командите кои се на Git-hub, ги поврзав локалниот и оддалечениот репозиториум.(git remote add origin URL)
+
+6.git add README.md
+git commit -m "Initial commit"
+
+7. git add SILab1.java
+   git commit -m "Add java class"
+
+8. git push -u origin master
+
+9.git checkout master(за да се префрлиме на гранката мастер)
+  git branch bug1(креирање на гранка)
+  git branch bug2
+  git branch bug3
+
+10.git checkout bug1
+
+11. грешката беше во i<=n, па кога ја поправив грешката направив git add SILab1.java и потоа commit со соодветна порака
+
+12.git checkout bug2
+
+13.грешката беше во el%2 == 0, кога ја поправив грешката направив git add SILab1.java и потоа commit со соодветна порака
+
+14.git checkout bug3
+
+15.грешката беше во тоа што sum=1 (треба 0) и sum*=el (треба sum+=el). Потоа add и commit со соодветна порака
+
+16. git push origin bug1
+    git push origin bug2
+    git push origin bug3
+
+17.git checkout master
+
+18.git merge bug1 (ff)
+
+19.git push origin master
+
+20. git merge bug2 (ort)
+
+21. git push origin master
+
+22. git checkout bug3
+
+23. git rebase master
+
+24. git checkout master
+
+25. git merge bug3 (non-fast-forward)
+
+26.git push origin bug3
+
+
